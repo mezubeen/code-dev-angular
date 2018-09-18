@@ -1,15 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent {
+  data$: FirebaseListObservable<any[]>;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(db: AngularFireDatabase) {
+    this.data$ = db.list('/enquiries');
   }
+
+
+  submit(x) {
+    console.log(x.value.email);
+    this.data$.push(x.value);
+    
+
+  }
+
 
 }
