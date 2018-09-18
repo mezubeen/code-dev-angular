@@ -83,7 +83,7 @@
               <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInLeft">
 
 
-                <form #f="ngForm" (ngSubmit)="submit(f)">
+                <form #f="ngForm" (ngSubmit)="submit(f)" *ngIf="!submitted">
                   <div class="form-group">
                     <!--<p>Name*</p>-->
                     <input 
@@ -145,8 +145,13 @@
                   </div>
                 </form>
 
-                <h4>If your budget is limited then we will adjust the final price according to your needs. So don't
+                <h4 *ngIf="!submitted">If your budget is limited then we will adjust the final price according to your needs. So don't
                   fear out the money. </h4>
+
+                  <div *ngIf="submitted">
+                    <img src="http://greentral.com/wp-content/uploads/2018/04/green-tick-clipart-transparent-green-checkmark-clip-art-at-clker-vector-clip-clipart-288x300.png" style="height: 150px;">
+                    <h2>Thank You! we'ill get back to you very soon!</h2>
+                  </div>
               </div>
 
             </div>

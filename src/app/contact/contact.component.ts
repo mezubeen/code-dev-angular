@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 })
 export class ContactComponent {
   data$: FirebaseListObservable<any[]>;
+  submitted: boolean = false;
+  // submittedHeading: true;
 
   constructor(db: AngularFireDatabase) {
     this.data$ = db.list('/enquiries');
@@ -17,6 +19,8 @@ export class ContactComponent {
   submit(x) {
     console.log(x.value.email);
     this.data$.push(x.value);
+
+    this.submitted = true;
     
 
   }
