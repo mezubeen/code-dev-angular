@@ -22,21 +22,14 @@
       "styles": [
         "../node_modules/animate.css/animate.css",
         "assets/css/bootstrap.css",
-        "assets/css/animate.css",
+  
         "assets/css/icomoon.css",
         "assets/css/flexslider.css",
         "assets/css/style.css",
         "styles.css"
       ],
       "scripts": [
-        "assets/js/modernizr-2.6.2.min.js",
-        "assets/js/jquery.min.js",
-        "assets/js/jquery.easing.1.3.js",
-        "assets/js/bootstrap.min.js",
-        "assets/js/jquery.waypoints.min.js",
-        "assets/js/jquery.flexslider-min.js",
-        "assets/js/sticky-kit.min.js",
-        "assets/js/main.js"
+
 
       ],
       "environmentSource": "environments/environment.ts",
